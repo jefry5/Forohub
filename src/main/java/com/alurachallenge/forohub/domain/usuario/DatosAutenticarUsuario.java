@@ -9,7 +9,8 @@ import jakarta.validation.constraints.NotNull;
 public record DatosAutenticarUsuario(
         @NotBlank
         @NotEmpty
-        String nombre,
+        @Email
+        String correo,
 
         @NotBlank
         @NotEmpty

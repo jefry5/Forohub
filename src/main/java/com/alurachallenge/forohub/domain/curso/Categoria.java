@@ -1,4 +1,4 @@
-package com.alurachallenge.forohub.domain.topico;
+package com.alurachallenge.forohub.domain.curso;
 
 public enum Categoria {
     PROGRAMACION,

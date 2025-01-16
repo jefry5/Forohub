@@ -4,6 +4,7 @@ import com.alurachallenge.forohub.domain.usuario.DatosAutenticarUsuario;
 import com.alurachallenge.forohub.domain.usuario.Usuario;
 import com.alurachallenge.forohub.infra.security.DatosJWTToken;
 import com.alurachallenge.forohub.infra.security.TokenService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -25,10 +26,11 @@ public class AutenticacionController {
     private TokenService tokenService;
 
     @PostMapping
-    public ResponseEntity<DatosJWTToken> autenticarUsuario(@RequestBody DatosAutenticarUsuario datos){
-        Authentication authToken = new UsernamePasswordAuthenticationToken(datos.nombre(),
+    public ResponseEntity<DatosJWTToken> autenticarUsuario(@RequestBody @Valid DatosAutenticarUsuario datos){
+        Authentication authToken = new UsernamePasswordAuthenticationToken(datos.correo(),
                 datos.contrasena());
         Usuario usuario = (Usuario) authenticationManager.authenticate(authToken).getPrincipal();
+
         String tokenJWT = tokenService.generarToken(usuario);
         return ResponseEntity.ok(new DatosJWTToken(tokenJWT));
     }

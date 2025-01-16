@@ -1,7 +1,5 @@
 package com.alurachallenge.forohub.domain.topico;
 
-import com.alurachallenge.forohub.domain.curso.DatosDetalleCurso;
-import com.alurachallenge.forohub.domain.usuario.DatosDetalleUsuario;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -16,8 +14,8 @@ public record DatosRegistroTopico(
         String mensaje,
 
         @NotNull
-        DatosDetalleUsuario autor,
+        Long autorId,
 
         @NotNull
-        DatosDetalleCurso curso
+        Long cursoId
 ) {}

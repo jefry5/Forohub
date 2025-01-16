@@ -1,6 +1,5 @@
 package com.alurachallenge.forohub.domain.curso;
 
-import com.alurachallenge.forohub.domain.topico.Categoria;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

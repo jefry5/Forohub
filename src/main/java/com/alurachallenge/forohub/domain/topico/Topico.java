@@ -36,4 +36,14 @@ public class Topico {
 
     //Probablemente sea una lista de las respuestas
     private String respuestas;
+
+    public Topico(DatosRegistroTopico datos, Usuario autor, Curso curso) {
+        this.status = true;
+        this.titulo = datos.titulo();
+        this.mensaje = datos.mensaje();
+        this.fechaCreacion = LocalDateTime.now();
+        this.autor = autor;
+        this.curso = curso;
+        this.respuestas = "en proceso";
+    }
 }
