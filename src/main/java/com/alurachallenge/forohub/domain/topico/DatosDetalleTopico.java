@@ -21,6 +21,6 @@ public record DatosDetalleTopico(
                         topico.getAutor().getPerfil().getNombre()),
                 new DatosDetalleCurso(topico.getCurso().getNombre(),
                         topico.getCurso().getCategoria()),
-                topico.isStatus());
+                topico.getStatus());
     }
 }

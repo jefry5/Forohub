@@ -24,7 +24,7 @@ public class Topico {
     private String titulo;
     private String mensaje;
     private LocalDateTime fechaCreacion;
-    private boolean status;
+    private Boolean status;
 
     @ManyToOne
     @JoinColumn(name = "autor_id")
@@ -45,5 +45,22 @@ public class Topico {
         this.autor = autor;
         this.curso = curso;
         this.respuestas = "en proceso";
+    }
+
+    public void actualizar(DatosActualizarTopico datos) {
+        if(datos.titulo() != null)
+            this.titulo = datos.titulo();
+
+        if(datos.mensaje() != null)
+            this.mensaje = datos.mensaje();
+
+        if(datos.status() != null)
+            this.status = datos.status();
+    }
+
+    public void actualizar(DatosActualizarTopico datos, Curso curso) {
+        actualizar(datos);
+        if(curso != null)
+            this.curso = curso;
     }
 }
