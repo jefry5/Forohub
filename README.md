@@ -32,7 +32,7 @@ Este es un Alura Challenge, en la cual se desarrolló una RestAPI sobre un foro 
 ---
 
 ## Documentacion
-Se utilizo Spring Doc para realizar la documentación de los request de la RestAPI. Acceda a la documentacion haciendo click.
+Se utilizo Spring Doc para realizar la documentación de los request de la RestAPI. Acceda a la documentacion accediendo a ".../swagger-ui/index.html".
 
 ---
 
