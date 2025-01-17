@@ -2,6 +2,7 @@ package com.alurachallenge.forohub.domain.perfil;
 
 import com.alurachallenge.forohub.domain.usuario.Usuario;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

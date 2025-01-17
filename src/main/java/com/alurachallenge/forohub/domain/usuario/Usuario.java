@@ -32,9 +32,18 @@ public class Usuario implements UserDetails {
     @JoinColumn(name = "perfil_id")
     private Perfil perfil;
 
+    public Usuario(DatosRegistroUsuario datos, Perfil perfil,String contrasena) {
+        this.nombre = datos.nombre();
+        this.correoElectronico = datos.correoElectronico();
+        this.contrasena = contrasena;
+        this.perfil = perfil;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority("ROLE_USER"));
+        //Estable el rol según el perfil del usuario
+        var ROL = "ROLE_" + perfil.getNombre().toUpperCase();
+        return List.of(new SimpleGrantedAuthority(ROL));
     }
 
     @Override

@@ -1,8 +1,6 @@
 package com.alurachallenge.forohub.domain.usuario;
 
-public record DatosDetalleUsuario(
-        Long id,
+public record DatosDetalleAutor(
         String nombre,
-        String correoElectronico,
         String perfil
 ) {}
